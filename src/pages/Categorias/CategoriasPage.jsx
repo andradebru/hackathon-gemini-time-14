@@ -43,15 +43,11 @@ function CategoriasPage() {
 							className="containerCategorias"
 							onClick={() => navigate(`/restaurantes/${categoria.id}`)}
 						>
-							<img
-								src={categoria.image + ".png"}
-								alt={categoria.name}
-								className="imgCategory"
-							/>
-							
-							<Typography className="textNames">{categoria.name}
-							</Typography>
-							<span>{`( ${categoria.total} )`}</span>
+							<img className="imgCategory" src={categoria.image + ".png"} alt={categoria.name} />
+
+							<Typography className="textNames">{categoria.name}</Typography>
+
+							<span>{"(" + categoria.total + ")"}</span>
 						</div>
 					</Grid>
 				))}
