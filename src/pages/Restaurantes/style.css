@@ -1,3 +1,22 @@
 .restaurantes .sub-header span {
   color: #DEDDDD;
 }
+
+.restaurantes {
+  gap: 10px;
+}
+
+.restaurante-card {
+  display: flex;
+
+}
+
+.restaurante-descricao {
+  background-color: #D9D9D9;
+  height: 90px;
+}
+
+.restaurantes img {
+  width: 90px;
+  height: 90px;
+}
