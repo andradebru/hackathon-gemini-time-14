@@ -1,7 +1,8 @@
 import { Container, Typography, CircularProgress } from "@material-ui/core";
 import { useEffect, useState } from "react";
-import { getRestaurantes } from "../../services/restaurantes.service";
 import RestauranteCard from "../../components/RestauranteCard";
+import { getRestaurantes } from "../../services/restaurantes.service";
+
 
 import "./style.css";
 
@@ -39,20 +40,16 @@ function RestaurantesPage() {
           Baratinho <span>(</span>$ <span>$ $ $ $)</span>
         </Typography>
       </div>
-
-      <RestauranteCard></RestauranteCard>
-      {/* {restaurantesBaratinho?.map(restaurante => (
-        <div className="restaurante-card" key={restaurante.id}>
-          <img className="imgCategory" src={restaurante.imagem} alt={restaurante.nome}/>
-          <div className="restaurante-descricao">
-            <h3>{restaurante.nome}</h3>
-            <p>{restaurante.distancia}</p>
-            <p>{restaurante.nota}</p>
-            <p>{restaurante.tempo_medio}</p>
-            <p>{restaurante.valor_entrega}</p>         
-          </div>
-        </div> */}
-      {/* ))} */}
+      {restaurantesBaratinho?.map(restaurante => (
+        <RestauranteCard key={restaurante.id} >
+          {restaurante.nome}
+          {restaurante.distancia}
+          <img className="imgCategory" src={restaurante.imagem} />
+          {restaurante.nota}
+          {restaurante.tempo_medio}
+          {restaurante.valor_entrega}
+        </RestauranteCard>
+      ))}
 
       <div className="sub-header">
         <Typography variant="body1" color="primary">
@@ -60,9 +57,14 @@ function RestaurantesPage() {
         </Typography>
       </div>
       {restaurantesNoPreco?.map(restaurante => (
-        <div key={restaurante.id}>
-          {restaurante.nome}
-        </div>
+        <RestauranteCard key={restaurante.id} >
+        {restaurante.nome}
+        {restaurante.distancia}
+        <img className="imgCategory" src={restaurante.imagem} />
+        {restaurante.nota}
+        {restaurante.tempo_medio}
+        {restaurante.valor_entrega}
+      </RestauranteCard>
       ))}
 
       <div className="sub-header">
@@ -71,9 +73,14 @@ function RestaurantesPage() {
         </Typography>
       </div>
       {restaurantesCaro?.map(restaurante => (
-        <div key={restaurante.id}>
-          {restaurante.nome}
-        </div>
+        <RestauranteCard key={restaurante.id} >
+        {restaurante.nome}
+        {restaurante.distancia}
+        <img className="imgCategory" src={restaurante.imagem} />
+        {restaurante.nota}
+        {restaurante.tempo_medio}
+        {restaurante.valor_entrega}
+      </RestauranteCard>
       ))}
 
     </Container>
