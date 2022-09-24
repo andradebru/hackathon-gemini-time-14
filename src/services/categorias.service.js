@@ -1,6 +1,6 @@
 import Api from "./api";
 
-export function getAllCategorias () {
+export function getAllCategorias() {
   try {
     const categorias = Api.get(`/categorias.json`);
     return categorias;
