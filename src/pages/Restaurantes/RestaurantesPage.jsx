@@ -1,6 +1,7 @@
 import { Container, Typography, CircularProgress } from "@material-ui/core";
 import { useEffect, useState } from "react";
 import { getRestaurantes } from "../../services/restaurantes.service";
+import { Routes, Route, useParams } from 'react-router-dom';
 
 
 import "./style.css";
@@ -12,9 +13,9 @@ function RestaurantesPage() {
   const [restaurantesCaro, setRestaurantesCaro] = useState([]);
   const [loading, setLoading] = useState(true);
 
+
   useEffect(() => {
-    getRestaurantes(1).then((response) => {
-      console.log(response)
+    getRestaurantes().then((response) => {
       setNomeCategoria(response.categoria)
       setRestaurantesBaratinho(response.baratinho);
       setRestaurantesNoPreco(response.no_preco);
