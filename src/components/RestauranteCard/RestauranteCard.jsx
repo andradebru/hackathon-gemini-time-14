@@ -1,7 +1,6 @@
-import RestauranteCard from ".";
 import "./style.css";
 
-export default RestauranteCard = (props) => {
+function RestauranteCard (props) {
     return (
         <div className="restaurante-card" key={props.id}>
           <img className="imgCategory" src={props.imagem} alt={props.nome}/>
@@ -15,3 +14,5 @@ export default RestauranteCard = (props) => {
         </div>
     );
 };
+
+export default RestauranteCard;
