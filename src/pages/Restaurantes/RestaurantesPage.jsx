@@ -41,13 +41,14 @@ function RestaurantesPage() {
         </Typography>
       </div>
       {restaurantesBaratinho?.map(restaurante => (
-        <div key={restaurante.id} >
-          {restaurante.nome}
-          {restaurante.distancia}
+        <div className="restaurante-card" key={restaurante.id} >
           <img className="imgCategory" src={restaurante.imagem} />
-          {restaurante.nota}
-          {restaurante.tempo_medio}
-          {restaurante.valor_entrega}
+          <div className="restaurante-desc">
+            <h4>{restaurante.nome}</h4>
+            <p>{restaurante.distancia} km</p>
+            <p className="restaurante-valor">★ {restaurante.nota}</p>
+            <p>{restaurante.tempo_medio}  - {restaurante.valor_entrega}</p>
+          </div>
         </div>
       ))}
 
@@ -57,13 +58,14 @@ function RestaurantesPage() {
         </Typography>
       </div>
       {restaurantesNoPreco?.map(restaurante => (
-        <div key={restaurante.id} >
-        {restaurante.nome}
-        {restaurante.distancia}
+        <div className="restaurante-card" key={restaurante.id} >
         <img className="imgCategory" src={restaurante.imagem} />
-        {restaurante.nota}
-        {restaurante.tempo_medio}
-        {restaurante.valor_entrega}
+        <div className="restaurante-desc">
+          <h4>{restaurante.nome}</h4>
+          <p>{restaurante.distancia} km</p>
+          <p className="restaurante-valor">★ {restaurante.nota}</p>
+          <p>{restaurante.tempo_medio}  - {restaurante.valor_entrega} </p>
+        </div>
       </div>
       ))}
 
@@ -73,13 +75,14 @@ function RestaurantesPage() {
         </Typography>
       </div>
       {restaurantesCaro?.map(restaurante => (
-        <div key={restaurante.id} >
-        {restaurante.nome}
-        {restaurante.distancia}
+        <div className="restaurante-card" key={restaurante.id} >
         <img className="imgCategory" src={restaurante.imagem} />
-        {restaurante.nota}
-        {restaurante.tempo_medio}
-        {restaurante.valor_entrega}
+        <div className="restaurante-desc">
+          <h4>{restaurante.nome}</h4>
+          <p>{restaurante.distancia} km</p>
+          <p className="restaurante-valor">★ {restaurante.nota}</p>
+          <p>{restaurante.tempo_medio}  - {restaurante.valor_entrega}</p>
+        </div>
       </div>
       ))}
 
