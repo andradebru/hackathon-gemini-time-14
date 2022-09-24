@@ -1,6 +1,5 @@
 import { Container, Typography, CircularProgress } from "@material-ui/core";
 import { useEffect, useState } from "react";
-import RestauranteCard from "../../components/RestauranteCard";
 import { getRestaurantes } from "../../services/restaurantes.service";
 import { Routes, Route, useParams } from 'react-router-dom';
 
@@ -13,10 +12,10 @@ function RestaurantesPage() {
   const [restaurantesNoPreco, setRestaurantesNoPreco] = useState([]);
   const [restaurantesCaro, setRestaurantesCaro] = useState([]);
   const [loading, setLoading] = useState(true);
-
+  let { id } = useParams();
 
   useEffect(() => {
-    getRestaurantes().then((response) => {
+    getRestaurantes(id).then((response) => {
       setNomeCategoria(response.categoria)
       setRestaurantesBaratinho(response.baratinho);
       setRestaurantesNoPreco(response.no_preco);
@@ -42,7 +41,7 @@ function RestaurantesPage() {
         </Typography>
       </div>
       {restaurantesBaratinho?.map(restaurante => (
-        <div key={restaurante.id} >
+        <div key={restaurante.id}>
           {restaurante.nome}
           {restaurante.distancia}
           <img className="imgCategory" src={restaurante.imagem} />
@@ -58,14 +57,9 @@ function RestaurantesPage() {
         </Typography>
       </div>
       {restaurantesNoPreco?.map(restaurante => (
-        <div key={restaurante.id} >
-        {restaurante.nome}
-        {restaurante.distancia}
-        <img className="imgCategory" src={restaurante.imagem} />
-        {restaurante.nota}
-        {restaurante.tempo_medio}
-        {restaurante.valor_entrega}
-      </div>
+        <div key={restaurante.id}>
+          {restaurante.nome}
+        </div>
       ))}
 
       <div className="sub-header">
@@ -74,14 +68,9 @@ function RestaurantesPage() {
         </Typography>
       </div>
       {restaurantesCaro?.map(restaurante => (
-        <div key={restaurante.id} >
-        {restaurante.nome}
-        {restaurante.distancia}
-        <img className="imgCategory" src={restaurante.imagem} />
-        {restaurante.nota}
-        {restaurante.tempo_medio}
-        {restaurante.valor_entrega}
-      </div>
+        <div key={restaurante.id}>
+          {restaurante.nome}
+        </div>
       ))}
 
     </Container>
