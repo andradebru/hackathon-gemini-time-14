@@ -24,7 +24,7 @@ function CategoriasPage() {
 	useEffect(() => {
 		getCategorias();
 	}, []);
-	
+
 	return (
 		<Container className="categorias">
 			<Typography variant="h5" align="center" color="primary" className="title">
@@ -38,10 +38,10 @@ function CategoriasPage() {
 
 			<Grid container spacing={1} className="gridContainer">
 				{categorias.map((categoria) => (
-					<Grid item xs={4} key={categoria.id}>
+					<Grid item xs={4} key={categoria.ID}>
 						<div
 							className="containerCategorias"
-							onClick={() => navigate(`/restaurantes/${categoria.id}`)}
+							onClick={() => navigate(`/restaurantes/${categoria.ID}`)}
 						>
 							<img className="imgCategory" src={categoria.image + ".png"} alt={categoria.name} />
 
