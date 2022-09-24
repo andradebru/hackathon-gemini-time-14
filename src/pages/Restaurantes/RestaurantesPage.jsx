@@ -5,7 +5,7 @@ import "./style.css";
 
 function RestaurantesPage() {
   const [nomeCategoria, setNomeCategoria] = useState([]);
-  const [restaurantesBaratinho, setRestaurantesBaratinho] = useState();
+  const [restaurantesBaratinho, setRestaurantesBaratinho] = useState([]);
   const [restaurantesNoPreco, setRestaurantesNoPreco] = useState([]);
   const [restaurantesCaro, setRestaurantesCaro] = useState([]);
   const [loading, setLoading] = useState(true);
