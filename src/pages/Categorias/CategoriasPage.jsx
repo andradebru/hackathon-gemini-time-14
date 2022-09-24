@@ -44,7 +44,7 @@ function CategoriasPage() {
 						>
 							<img className="imgCategory" src={categoria.image + ".png"} alt={categoria.nome} />
 							<Typography className="textNames">{categoria.name}</Typography>
-							<span>{categoria.total}</span>
+							<span>{"(" + categoria.total + ")"}</span>
 						</div>
 					</Grid>
 				))}
