@@ -1,5 +1,6 @@
 import { Container, Typography, CircularProgress } from "@material-ui/core";
 import { useEffect, useState } from "react";
+import RestauranteCard from "../../components/RestauranteCard";
 import { getRestaurantes } from "../../services/restaurantes.service";
 
 
@@ -40,14 +41,14 @@ function RestaurantesPage() {
         </Typography>
       </div>
       {restaurantesBaratinho?.map(restaurante => (
-        <div key={restaurante.id}>
+        <RestauranteCard key={restaurante.id} >
           {restaurante.nome}
           {restaurante.distancia}
           <img className="imgCategory" src={restaurante.imagem} />
           {restaurante.nota}
           {restaurante.tempo_medio}
           {restaurante.valor_entrega}
-        </div>
+        </RestauranteCard>
       ))}
 
       <div className="sub-header">
@@ -56,9 +57,14 @@ function RestaurantesPage() {
         </Typography>
       </div>
       {restaurantesNoPreco?.map(restaurante => (
-        <div key={restaurante.id}>
-          {restaurante.nome}
-        </div>
+        <RestauranteCard key={restaurante.id} >
+        {restaurante.nome}
+        {restaurante.distancia}
+        <img className="imgCategory" src={restaurante.imagem} />
+        {restaurante.nota}
+        {restaurante.tempo_medio}
+        {restaurante.valor_entrega}
+      </RestauranteCard>
       ))}
 
       <div className="sub-header">
@@ -67,9 +73,14 @@ function RestaurantesPage() {
         </Typography>
       </div>
       {restaurantesCaro?.map(restaurante => (
-        <div key={restaurante.id}>
-          {restaurante.nome}
-        </div>
+        <RestauranteCard key={restaurante.id} >
+        {restaurante.nome}
+        {restaurante.distancia}
+        <img className="imgCategory" src={restaurante.imagem} />
+        {restaurante.nota}
+        {restaurante.tempo_medio}
+        {restaurante.valor_entrega}
+      </RestauranteCard>
       ))}
 
     </Container>
