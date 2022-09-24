@@ -14,10 +14,10 @@ import "./style.css";
 function BannersPage() {
   const navigate = useNavigate();
   const [listaBanners, setListaBanners] = useState([]);
-  const [index, setIndex] = useState(0);
+  const [index, setIndex] = useState(3);
   const [loading, setLoading] = useState(true);
   const selectedBanner = listaBanners[index];
-  const isFirst = index === 0;
+  const isFirst = index === 3;
   const isLast = index === listaBanners.length - 1;
 
   const getBanners = async () => {
@@ -43,8 +43,8 @@ function BannersPage() {
   }
 
   return (
-    <div className="full-height" style={{backgroundColor: selectedBanner['background-color']}}>
-      <Container style={{backgroundColor: selectedBanner['background-color']}}>
+    <div className="full-height" style={{ backgroundColor: selectedBanner['background-color'] }}>
+      <Container style={{ backgroundColor: selectedBanner['background-color'] }}>
         <div className="title-home">
           <Typography
             className="title-home"
