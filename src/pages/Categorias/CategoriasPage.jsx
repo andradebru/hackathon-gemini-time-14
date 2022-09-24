@@ -21,6 +21,8 @@ function CategoriasPage() {
 		setLoading(false);
 	};
 
+	console.log(categorias);
+
 	useEffect(() => {
 		getCategorias();
 	}, []);
@@ -42,13 +44,14 @@ function CategoriasPage() {
 							className="containerCategorias"
 							onClick={() => navigate(`/restaurantes/${categoria.id}`)}
 						>
-							<img className="imgCategory" src={categoria.imagem + ".png"} alt={categoria.nome} />
-
-							<Typography className="textNames">{categoria.nome}</Typography>
+							<img className="imgCategory" src={categoria.image + ".png"} alt={categoria.nome} />
+							<Typography className="textNames">{categoria.name}</Typography>
+							<span>{categoria.total}</span>
 						</div>
 					</Grid>
 				))}
 			</Grid>
+					
 		</Container>
 	);
 }
