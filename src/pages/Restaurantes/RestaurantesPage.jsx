@@ -1,6 +1,8 @@
 import { Container, Typography, CircularProgress } from "@material-ui/core";
 import { useEffect, useState } from "react";
 import { getRestaurantes } from "../../services/restaurantes.service";
+
+
 import "./style.css";
 
 function RestaurantesPage() {
@@ -11,7 +13,8 @@ function RestaurantesPage() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    getRestaurantes().then((response) => {
+    getRestaurantes(1).then((response) => {
+      console.log(response)
       setNomeCategoria(response.categoria)
       setRestaurantesBaratinho(response.baratinho);
       setRestaurantesNoPreco(response.no_preco);
@@ -21,7 +24,7 @@ function RestaurantesPage() {
   }, []);
 
   return (
-    <Container class="restaurantes">
+    <Container className="restaurantes">
       <Typography variant="h5" align="center" color="primary" className="title">
         RESTAURANTES: {nomeCategoria}
       </Typography>
@@ -39,6 +42,11 @@ function RestaurantesPage() {
       {restaurantesBaratinho?.map(restaurante => (
         <div key={restaurante.id}>
           {restaurante.nome}
+          {restaurante.distancia}
+          <img className="imgCategory" src={restaurante.imagem} />
+          {restaurante.nota}
+          {restaurante.tempo_medio}
+          {restaurante.valor_entrega}
         </div>
       ))}
 

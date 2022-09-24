@@ -1,9 +1,9 @@
 import Api from "./api";
 
-export const getListagemRestaurantes = async (id) => {
+export function getListagemRestaurantes() {
   try {
-    const listagemPorPreco = await Api.get(`/restaurantes/${id}.json`);
-    return listagemPorPreco;
+    const response = Api.get(`/restaurantes/.json`);
+    return response;
   } catch (err) {
     throw err;
   }
