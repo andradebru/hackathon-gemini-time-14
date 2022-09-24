@@ -41,14 +41,14 @@ function RestaurantesPage() {
         </Typography>
       </div>
       {restaurantesBaratinho?.map(restaurante => (
-        <RestauranteCard key={restaurante.id} >
+        <div key={restaurante.id} >
           {restaurante.nome}
           {restaurante.distancia}
           <img className="imgCategory" src={restaurante.imagem} />
           {restaurante.nota}
           {restaurante.tempo_medio}
           {restaurante.valor_entrega}
-        </RestauranteCard>
+        </div>
       ))}
 
       <div className="sub-header">
@@ -57,14 +57,14 @@ function RestaurantesPage() {
         </Typography>
       </div>
       {restaurantesNoPreco?.map(restaurante => (
-        <RestauranteCard key={restaurante.id} >
+        <div key={restaurante.id} >
         {restaurante.nome}
         {restaurante.distancia}
         <img className="imgCategory" src={restaurante.imagem} />
         {restaurante.nota}
         {restaurante.tempo_medio}
         {restaurante.valor_entrega}
-      </RestauranteCard>
+      </div>
       ))}
 
       <div className="sub-header">
@@ -73,14 +73,14 @@ function RestaurantesPage() {
         </Typography>
       </div>
       {restaurantesCaro?.map(restaurante => (
-        <RestauranteCard key={restaurante.id} >
+        <div key={restaurante.id} >
         {restaurante.nome}
         {restaurante.distancia}
         <img className="imgCategory" src={restaurante.imagem} />
         {restaurante.nota}
         {restaurante.tempo_medio}
         {restaurante.valor_entrega}
-      </RestauranteCard>
+      </div>
       ))}
 
     </Container>
