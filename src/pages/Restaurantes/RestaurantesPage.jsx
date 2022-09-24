@@ -41,8 +41,8 @@ function RestaurantesPage() {
       </div>
       {restaurantesBaratinho?.map(restaurante => (
         <div key={restaurante.id}>
-          {restaurante.nome}
-          {restaurante.distancia}
+          <h3>{restaurante.nome}</h3>
+          <p>{restaurante.distancia}</p>
           <img className="imgCategory" src={restaurante.imagem} />
           {restaurante.nota}
           {restaurante.tempo_medio}
